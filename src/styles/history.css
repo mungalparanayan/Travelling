@@ -1,0 +1,72 @@
+.cont {
+    margin: 10rem 10rem 5rem 10rem;
+    font-size: 1.5rem;
+    /* flex: 1; */
+}
+
+.tick {
+    background-color : lightblue;
+    margin: 20px;
+}   
+
+.tick ul {
+    list-style: none;
+    padding: 10px;  
+}
+
+.tick li {
+    padding: 10px;
+}
+
+.cont button {
+    background-color: coral;
+}
+
+.histic {
+    font-size: 36px;
+    text-align: center;
+}
+
+.contt {
+    margin: 20px 10px 313px 20px;
+    font-size: 20px;
+}
+
+.beaa {
+    margin-left: 20px;
+    margin-bottom: 16px;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.beaa:hover {
+    color: beige;
+    background-color: blue;
+}
+
+
+
+
+
+
+@media (max-width: 991px) {
+    .cont {
+        margin: 10rem 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cont {
+        margin: 10rem auto;
+    }
+}
+
+@media (max-width: 450px) {
+    .cont {
+        margin: 10rem auto;
+    }
+}

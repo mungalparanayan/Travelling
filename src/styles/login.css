@@ -1,0 +1,50 @@
+.loform {
+    max-width: 300px;
+    margin: 150px auto 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.ll {
+    font-size: 1.5rem;
+}
+
+.lii {
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+  
+.but {
+    margin-left: 0;
+    margin-bottom: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+  
+.but:hover {
+    background-color: #45a049;
+}  
+
+.trap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.sinow {
+    color: red; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+

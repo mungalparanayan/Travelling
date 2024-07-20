@@ -1,0 +1,133 @@
+.mainn img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.mainn {
+    font-family: "popins";
+}
+
+.pa1 {
+    font-size: 5rem;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 5rem;
+    font-family: "popins";
+    color: rgb(158, 158, 158);
+}   
+
+.pa2 {
+    font-size: 5rem;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+    font-family: "dancing script";
+    color: rgb(158, 158, 158);
+}
+
+.ps {
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ps ul {
+    list-style: none;
+}
+
+.ps li {
+    margin: 25px;
+    font-size: 16px;
+    font-family: "roborto", sans-serif;
+    color: rgb(116, 115, 115);
+}
+
+.conti {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 6rem 0;
+    gap: 3rem;
+}
+
+.continent {
+    position: relative; 
+}
+
+.continent img {
+    display: block; 
+    width: 100%; 
+    height: 30rem; 
+    border-radius: 10px; 
+}
+
+.boxx {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    padding: 20px; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+}
+
+.boxx h1 {
+    font-size: 2rem; 
+    color: #333; 
+    margin-bottom: 10px;
+}
+
+.boxx p {
+    font-size: 1rem;
+    color: #666; 
+}
+
+.pla {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 2rem;
+}
+
+
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 991px) {
+    
+}
+
+@media (max-width: 768px) {
+    .pa1 {
+        width: 80%;
+        font-size: 4rem;
+    }
+    .pa2 {
+        font-size: 3.5rem;
+    }
+    .ps {
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px) {
+    .pa1 {
+        width: 85%;
+        font-size: 3rem;
+    }
+    .pa2 {
+        font-size: 3rem;
+    }
+    .ps {
+        width: 90%;
+    }
+    .ps li {
+        font-size: 1.5rem;
+    }
+}

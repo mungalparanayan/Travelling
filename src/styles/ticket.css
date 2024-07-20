@@ -1,0 +1,204 @@
+.ticketdiv {
+    width: 80%;
+    margin: 0 auto;
+    background: url("form_back.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;   
+    background: linear-gradient(45deg, #ffffff,rgb(190, 203, 255) 75%);
+    border-radius: 10px;
+    margin-top: 3rem;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.ticketdiv h2 {
+    margin: 10px 0;
+}
+
+.ticketdiv hr {
+    width: 90%;
+    margin: 20px 20px 20px 32px;
+}
+
+.ticketdiv h1 {
+    text-align: center;
+    padding-top: 24px;
+    color: #0B2447;
+}
+
+.ul1 {
+    display: flex;
+    margin: 10px 10px 10px 30px;
+    padding-left: 0;
+}
+
+.ul1 li {
+    list-style: none;
+    margin-right: 30px;
+}
+
+.li1 {
+    width: 20%;
+}
+
+.li2, .li4 {
+    width: 25%;
+}
+
+.li3 {
+    width: 30%;
+}
+
+.li5 {
+    width: 30%;
+} 
+
+.li6 {
+    width: 35%;
+}
+
+.ticketdiv h2 {
+    font-size: 18px;
+    color: #0B2447;
+}
+
+.ticketdiv h3 {
+    font-size: 24px;
+    color: #0B2447;
+    margin-bottom: 8px;
+}
+
+.bd {
+    margin-left: 30px;
+}
+
+.tcp {
+    margin-top: 20px;
+}
+
+.ul2 {
+    margin-left: 30px;
+    width: 55%;
+}
+
+.ul2 ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-left: 24px;
+}
+
+.ul2 li {
+    list-style: none;
+    margin: 4px;
+}
+
+.ul2 hr {
+    width: 110%;
+    margin-left: 0px;
+}
+
+.term {
+    margin-left: 30px;
+    /* text-align: center; */
+    width: 90%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-family: "roboto", serif;
+}
+
+.term h2 {
+    font-size: 24px;
+}
+
+.term p {
+    font-size: 17px;
+    margin-top: 16px;
+}
+
+.thank {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "popins", sans-serif;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.thank p {
+    margin: 5px;
+    font-size: 18px;
+    color: #0B2447;
+}
+
+.d {
+    margin-top: 40px;
+}
+
+.l2 {
+    text-decoration: none;
+    color: white;
+    margin-left: 900px;
+    background-color: #394867;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.d a:hover {
+    background-color: #6C9BCF;
+}
+
+
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 991px) {
+    .ticketdiv {
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cont {
+        width: 90%;
+    }
+    .ul1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .ul1 li {
+        width: 100%;
+    }
+    .ul2 {
+        width: 80%;
+    }
+    .ul2 li {
+        font-size: 2rem;
+    }
+    .tcp {
+        font-size: 80%;
+    }
+    .term p {
+        width: 90%;
+        margin: 1.5rem auto;
+        font-size: 1.8rem;
+    }
+    .thank {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .ticketdiv h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .cont {
+        width: 100%;
+    }
+}

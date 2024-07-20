@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelling.com</title>
+
+    <!-- swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"><span>T</span>ravel</a>
+
+        <nav class="navbar">
+            <a href="#">home</a>
+            <a href="">about</a>
+            <a href="#">book</a>
+            <!-- <a href="#packages">packages</a>
+            <a href="#services">services</a>
+            <a href="#gallery">gallery</a> -->
+            <a href="#">history</a>
+            <a href="#">review</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <i class="fas fa-user" id="login-btn"></i>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="search here...">
+            <label for="search-bar" class="fas fa-search"></label>
+        </form>
+    </header>
+
+    <div class="login-form-container"> 
+        <i class="fas fa-times" id="form-close"></i>
+        <form action="">
+            <h3>Login</h3>
+            <input type="email" class="box" placeholder="Enter your email">
+            <input type="password" class="box" placeholder="Enter your password">
+            <input type="submit" value="login now" class="btn">
+            <input type="checkbox" id="remember">
+            <label for="remember">remember me</label>
+            <p>forget password? <a href="#">click here</a></p>
+            <p>don't have an account? <a href="#">register now</a></p>
+        </form>
+    </div>
+
+    <section class="home" id="home">
+        <div class="content">
+            <h3>adventure is worthwile</h3>
+            <p>discover new places with us, adventure awaits</p>
+            <a href="#" class="btn"> discover more</a>
+        </div>
+
+        <div class="controls">
+            <span class="vid-btn active" data-src="videos/video1.mp4"></span>
+            <span class="vid-btn" data-src="videos/video2.mp4"></span>
+            <span class="vid-btn" data-src="videos/video3.mp4"></span>
+            <span class="vid-btn" data-src="videos/video4.mp4"></span>
+            <span class="vid-btn" data-src="videos/video5.mp4"></span>
+        </div>
+
+        <div class="video-container">
+            <video src="videos/video1.mp4" id="video-slider" loop autoplay muted></video>
+        </div>
+    </section>
+
+    <!-- <section class="book" id="book">
+        <h1 class="heading">
+            <span>b</span>
+            <span>o</span>
+            <span>o</span>
+            <span>k</span>
+            <span class="space"></span>
+            <span>n</span>
+            <span>o</span>
+            <span>w</span>
+        </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="images/about.jpg" alt="">
+            </div>
+        </div>
+    </section> -->
+
+    <section class="packages" id="packages">
+        <h1 class="heading">
+            <span>p</span>
+            <span>a</span>
+            <span>c</span>
+            <span>k</span>
+            <span>a</span>
+            <span>g</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="images/mumbai.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>mumbai</h3>
+                    <p>Mumbai, the bustling heart of India, is a city of contrasts where the spirit of Bollywood meets the bustling rhythm of everyday life.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span> </div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/sydney.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>sydney</h3>
+                    <p>Sydney, known for its stunning harbor and iconic Opera House, offers a perfect blend of natural beauty and vibrant city life.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span> </div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/hawaii.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>hawaii</h3>
+                    <p>Hawaii, a tropical paradise in the Pacific, is famed for its breathtaking beaches, lush landscapes, and rich cultural heritage.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span> </div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/paris.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>paris</h3>
+                    <p>Paris, the city of lights, enchants visitors with its timeless elegance, world-class art, and romantic ambiance.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span> </div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/tokyo.jpg" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>tokyo</h3>
+                    <p>Tokyo, a futuristic metropolis, dazzles with its cutting-edge technology, bustling streets, and deep-rooted traditions.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span> </div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/egypt.jpeg" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>egypt</h3>
+                    <p>Egypt, the land of ancient pharaohs, captivates with its majestic pyramids, vast deserts, and the timeless allure of the Nile.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="price">$90.00 <span>$120.00</span> </div>
+                    <a href="#" class="btn">book now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h1 class="heading">
+            <span>s</span>
+            <span>e</span>
+            <span>r</span>
+            <span>v</span>
+            <span>i</span>
+            <span>c</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-hotel"></i>
+                <h3>affordable hotels</h3>
+                <p>Discover comfort and quality accommodations without breaking the bank.</p>
+            </div>
+        
+            <div class="box">
+                <i class="fas fa-utensils"></i>
+                <h3>food and drinks</h3>
+                <p>Indulge in a variety of delicious cuisines and beverages from around the world.</p>
+            </div>
+        
+            <div class="box">
+                <i class="fas fa-bullhorn"></i>
+                <h3>safety guide</h3>
+                <p>Equip yourself with essential tips for safe and secure travel experiences.</p>
+            </div>
+        
+            <div class="box">
+                <i class="fas fa-globe-asia"></i>
+                <h3>around the world</h3>
+                <p>Journey through diverse destinations and immerse yourself in global cultures.</p>
+            </div>
+        
+            <div class="box">
+                <i class="fas fa-plane"></i>
+                <h3>fastest travel</h3>
+                <p> Experience quick and efficient travel to your favorite destinations.</p>
+            </div>
+        
+            <div class="box">
+                <i class="fas fa-hiking"></i>
+                <h3>adventures</h3>
+                <p>Dive into exciting adventures and make unforgettable memories.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h1 class="heading">
+            <span>g</span>
+            <span>a</span>
+            <span>l</span>
+            <span>l</span>
+            <span>e</span>
+            <span>r</span>
+            <span>y</span>
+        </h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="images/p1.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p2.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p3.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p4.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p5.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p6.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p7.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p8.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="images/p9.jpeg" alt="">
+                <div class="content">
+                    <h3>amazing places</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati.</p>
+                    <a href="#" class="btn">see more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="review" id="review">
+        <h1 class="heading">
+            <span>r</span>
+            <span>e</span>
+            <span>v</span>
+            <span>i</span>
+            <span>e</span>
+            <span>w</span>
+        </h1>
+
+        <div class="swiper review-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/r1.jpeg" alt="">
+                        <h3>Veyla Dynar</h3>
+                        <p>This website made my vacation planning so much easier! I loved the detailed destination guides and the ability to customize my itinerary.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/r5.jpeg" alt="">
+                        <h3>john deo</h3>
+                        <p> The site is incredibly user-friendly, and I found the best deals on flights and hotels. </p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/r3.jpeg" alt="">
+                        <h3>Brinnax Ulthar</h3>
+                        <p>The customer service team was also very responsive and helped me with a few last-minute changes. Highly recommend!</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/r4.png" alt="">
+                        <h3>Zolthar Korrim</h3>
+                        <p>I've tried several travel websites in the past, but this one stands out for its excellent deals and comprehensive travel packages.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="images/r2.jpeg" alt="">
+                        <h3>Melsira Qyoth</h3>
+                        <p>The booking process was seamless, and I appreciated the extra tips and recommendations for local attractions. It truly made my trip unforgettable!</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="swiper-pagination bullet"></div> -->
+        </div>
+    </section>
+
+    <section>
+        <h1 class="heading">
+            <span>h</span>
+            <span>i</span>
+            <span>g</span>
+            <span>h</span>
+            <span>l</span>
+            <span>i</span>
+            <span>g</span>
+            <span>h</span>
+            <span>t</span>
+            <span>s</span>
+        </h1>
+        <div class="highlights">
+            <ul>
+                <li>
+                    <img src="images/miami.jpg" alt="Picture of Miami">
+                    <p>Miami <strong>USA</strong> </p>
+                </li>
+                <li>
+                    <img src="images/munich.jpg" alt="Picture of Munich">
+                    <p>Munich <strong>GERMANY</strong> </p>
+                </li>
+                <li>
+                    <img src="images/barcelona.jpg" alt="Picture of Barcelona">
+                    <p>Barcelona <strong>SPAIN</strong> </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <ul>  
+            <li>
+              <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+                <a href="https://www.twitter.com" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>   
+
+
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- js file -->
+    <script src="index.js"></script>
+</body>
+</html>
