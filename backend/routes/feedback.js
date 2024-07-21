@@ -4,7 +4,7 @@ const Feeds = require('../model/Feeds');
 const { body, validationResult } = require('express-validator');
 const fetchuser = require('../middleware/fetchuser');  
 
-router.post('/feedback', [
+router.post('/feedback', fetchuser, [
     body("email").isEmail().withMessage('Invalid email format'),
     body("rating").isInt()
 ], async (req, res) => {
