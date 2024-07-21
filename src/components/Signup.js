@@ -10,7 +10,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const response = await fetch("http://localhost:5000/api/auth/createuser", {
+      const response = await fetch("https://travel-1xsf.onrender.com/api/auth/createuser", {
         method: "POST", 
         headers: {
           "Content-type": "application/json"

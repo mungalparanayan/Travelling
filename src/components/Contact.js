@@ -14,7 +14,7 @@ export default function Contact() {
             e.preventDefault(); 
             const {name, email, phoneno, age, dep_country, des_country, dep_date, des_date, service_class} = details
 
-            const response = await fetch("http://localhost:5000/api/form/formdata", {
+            const response = await fetch("https://travel-1xsf.onrender.com/api/form/formdata", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

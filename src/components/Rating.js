@@ -34,7 +34,7 @@ const Rating = (props) => {
     e.preventDefault();
     credentials.email = localStorage.getItem("Email");
     setCredentials({ ...credentials, rating: rating });
-    const response = await fetch("http://localhost:5000/api/feed/feedback", {
+    const response = await fetch("https://travel-1xsf.onrender.com/api/feed/feedback", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
