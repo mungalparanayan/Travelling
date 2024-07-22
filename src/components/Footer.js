@@ -7,22 +7,22 @@ export default function footer() {
             <ul>  
                 <li>
                 <a href="https://www.facebook.com" target="_blank">
-                    <i class="fab fa-facebook"></i>
+                    <i className="fab fa-facebook"></i>
                 </a>
                 </li>
                 <li>
                     <a href="https://www.twitter.com" target="_blank">
-                        <i class="fab fa-twitter"></i>
+                        <i className="fab fa-twitter"></i>
                     </a>
                 </li>
                 <li>
                     <a href="https://www.linkedin.com" target="_blank">
-                        <i class="fab fa-linkedin"></i>
+                        <i className="fab fa-linkedin"></i>
                     </a>
                 </li>
                 <li>
                     <a href="https://www.instagram.com" target="_blank">
-                        <i class="fab fa-instagram"></i>
+                        <i className="fab fa-instagram"></i>
                     </a>
                 </li>
             </ul>

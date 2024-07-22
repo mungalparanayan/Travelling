@@ -1,4 +1,4 @@
-import { findByLabelText } from '@testing-library/react';
+// import { findByLabelText } from '@testing-library/react';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -19,7 +19,7 @@ const feedbackStyles = {
   },
   selectedStar: {
     color: 'orange',
-  }
+  },
 };
 
 const Rating = (props) => {
@@ -32,6 +32,17 @@ const Rating = (props) => {
   
   const handleRating = async (e) => {
     e.preventDefault();
+
+    const ema = localStorage.getItem("Email");
+
+    if (!ema) {
+      toast.error("User not logged in. Please log in to submit a rating.", {
+        position: "top-center",
+        className: "fontToast"
+      });
+      return;
+    }
+
     credentials.email = localStorage.getItem("Email");
     setCredentials({ ...credentials, rating: rating });
     const response = await fetch("https://travel-1xsf.onrender.com/api/feed/feedback", {
@@ -44,15 +55,17 @@ const Rating = (props) => {
     const json = await response.json();
     console.log(json);
     setRating(0);
-    console.log(json.success);
+    console.log("JSON : " , json.success);
     if(json.success) {
         toast.success("Rating submitted successfully", {
-            position: "top-center"
+            position: "top-center",
+            className: "fontToast"
         });
     }
     else {
         toast.error(json.error, {
-            position: "top-center"
+            position: "top-center",
+            className: "fontToast"
         });
     }
   }

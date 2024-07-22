@@ -4,10 +4,13 @@ const Feeds = require('../model/Feeds');
 const { body, validationResult } = require('express-validator');
 const fetchuser = require('../middleware/fetchuser');  
 
-router.post('/feedback', fetchuser, [
+router.post('/feedback', [
+
     body("email").isEmail().withMessage('Invalid email format'),
     body("rating").isInt()
+
 ], async (req, res) => {
+    
     let success = true;
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
