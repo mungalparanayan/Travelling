@@ -36,3 +36,7 @@
 .buto:hover {
   background-color: #45a049;
 }
+
+.fontToast {
+  font-size: 1.5rem;
+}

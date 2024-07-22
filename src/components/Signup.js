@@ -21,18 +21,23 @@ const Signup = () => {
       console.log(json);
       if(json.success) {
         toast.success("registration successfully", {
-          position: "top-center"
+          position: "top-center",
+          className: "fontToast"
         })
         navigate("/login");
       }
       else {
         toast.error("user is already registered", {
-          position: "top-center"
+          position: "top-center",
+          className: "fontToast"
         });        
       }
     }
     catch(error) {
-      toast.error("not registered", error);
+      toast.error("not registered", error, {
+        position: "top-center",
+        className: "fontToast"
+      });
       console.error(error);
     }
   }
