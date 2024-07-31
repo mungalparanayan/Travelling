@@ -5,7 +5,7 @@ const mongoURI = "mongodb+srv://Travelling:TRAVEL@cluster0.i9vthyp.mongodb.net/T
 
 const connectToMongo = ()=> {
     mongoose.connect(mongoURI, {
-        useNewUrlParser: true,
+        // useNewUrlParser: true,
         // useUnifiedTopology: true,
     })
     .then(() => {
