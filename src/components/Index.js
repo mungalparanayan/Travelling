@@ -39,7 +39,7 @@ const Index = () => {
         <div className="content">
           <h3>adventure is worthwhile</h3>
           <p>discover new places with us, adventure awaits</p>
-          <a href="#" className="btn"> discover more</a>
+          <a href="#" className="btn"> Discover More</a>
         </div>
 
         <div className="controls">

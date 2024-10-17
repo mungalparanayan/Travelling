@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import History from './components/History';
 import Rating from './components/Rating';
+import Notes from './components/Notes';
 import FormState from './context/Formstate';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/history" element={ <History /> }> </Route>
             <Route exact path="/rating" element={ <Rating /> }> </Route>
             <Route exact path="/history/ticket" element={ <Ticket /> }> </Route>
+            <Route exact path="/postlist" element={ <Notes /> }> </Route>
           </Routes>
         </div>
         <Footer />

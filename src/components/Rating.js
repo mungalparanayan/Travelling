@@ -1,30 +1,15 @@
-// import { findByLabelText } from '@testing-library/react';
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import '../styles/rating.css'; 
 import { toast } from 'react-toastify';
 
-const feedbackStyles = {
-  container: {
-    textAlign: 'center',
-    margin: '130px 20px 50px 20px',
-    fontSize: '2rem',
-  },
-  starsContainer: {
-    display: 'inline-block',
-    margin: '1rem'
-  },
-  star: {
-    fontSize: '4rem',
-    cursor: 'pointer',
-    marginRight: '5px',
-  },
-  selectedStar: {
-    color: 'orange',
-  },
-};
-
-const Rating = (props) => {
+const ReviewPage = () => {
   const [rating, setRating] = useState(0);
-  const [credentials, setCredentials] = useState({email: "", rating: ""})
+  const [hover, setHover] = useState(0);
+  const [comment, setComment] = useState('');
+
+  const [credentials, setCredentials] = useState({email: "", rating: "", comment: ""})
 
   const handleRatingClick = (selectedRating) => {
     setRating(selectedRating);
@@ -43,24 +28,35 @@ const Rating = (props) => {
       return;
     }
 
+    if (rating === 0 || comment === "") {
+      toast.error("Please provide both a rating and a comment.", {
+        position: "top-center",
+        className: "fontToast"
+      });
+      return;
+    }
+
+    // const host = "https://travel-1xsf.onrender.com"
+
     credentials.email = localStorage.getItem("Email");
-    setCredentials({ ...credentials, rating: rating });
-    const response = await fetch("https://travel-1xsf.onrender.com/api/feed/feedback", {
+    setCredentials({ ...credentials, rating: rating, comment: comment });
+    const response = await fetch("http://localhost:5000/api/feed/feedback", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ email: credentials.email, rating: rating })
+      body: JSON.stringify({ email: credentials.email, rating: rating, comment: comment })
     });
     const json = await response.json();
     console.log(json);
-    setRating(0);
     console.log("JSON : " , json.success);
     if(json.success) {
-        toast.success("Rating submitted successfully", {
-            position: "top-center",
-            className: "fontToast"
-        });
+      toast.success("Rating submitted successfully", {
+        position: "top-center",
+        className: "fontToast"
+      });
+      setRating(0);
+      setComment('');
     }
     else {
         toast.error(json.error, {
@@ -69,36 +65,47 @@ const Rating = (props) => {
         });
     }
   }
-  
+
   return (
-    <div style={feedbackStyles.container}>
-      <div className="rating-page" style={{width: '70%', margin: 'auto'}}>
-          <h2 style={{margin: '2rem'}}>Rate Your Travel Experience</h2>
-          <p>
-              We value your feedback and strive to provide the best travel experiences for our community.
-              Please take a moment to rate your recent trip and share your thoughts with us.
-              Your feedback helps us improve our services and offer even better travel experiences in the future.
-          </p>
+    <div className="rate-container">
+      <h1 className='rateh1'>Rate Your Travel Experience</h1>
+      <p className='ratep'>We value your feedback and strive to provide the best travel experiences for our community. Please take a moment to rate your recent trip and share your thoughts with us.</p>
+
+      <div className="stars">
+        {[...Array(5)].map((star, index) => {
+          const ratingValue = index + 1;
+          return (
+            <label key={index}>
+              <input
+                type="radio"
+                name="rating"
+                value={ratingValue}
+                onClick={() => handleRatingClick(ratingValue)}
+              />
+              <FontAwesomeIcon
+                icon={faStar}
+                className="star"
+                color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+                size="2x"
+                onMouseEnter={() => setHover(ratingValue)}
+                onMouseLeave={() => setHover(0)}
+              />
+            </label>
+          );
+        })}
       </div>
-      {/* <h1>Rate our service:</h1> */}
-      <div style={feedbackStyles.starsContainer}>
-        {[1, 2, 3, 4, 5].map((star) => (
-          <span
-            key={star}
-            style={{
-              ...feedbackStyles.star,
-              ...(star <= rating ? feedbackStyles.selectedStar : {}),
-            }}
-            onClick={() => handleRatingClick(star)}
-          >
-            ★
-          </span>
-        ))}
-      </div>
-      <p style={{fontSize: '2rem', marginTop: '1rem'}}>Your rating: <span id="selected-rating">{rating}</span> stars</p>
-      <button className="btn btn-info" style={{margin: '20px', padding: '8px', borderRadius: '10px='}} onClick={handleRating}>Submit</button>
+      <p className="rating-text">Your Rating : {rating} stars</p>
+
+      <textarea
+        className="comment-box"
+        placeholder="Share your experience..."
+        value={comment}
+        onChange={(e) => setComment(e.target.value)}
+        required
+      />
+      <button type="submit" className="submit-button" onClick={handleRating}>Submit</button>
     </div>
   );
-}
+};
 
-export default Rating;
+export default ReviewPage;

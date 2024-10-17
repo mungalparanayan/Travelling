@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/ticket.css'
 
-const ticket = (props) => {
+const Ticket = (props) => {
+
+    const [departureTerminal, setDepartureTerminal] = useState(1);
+    const [arrivalTerminal, setArrivalTerminal] = useState(1);
+    const [randomCode, setRandomCode] = useState('');
+    const [seatNumber, setSeatNumber] = useState('');
+
+    const generateRandomCode = () => {
+        const letters = String.fromCharCode(Math.floor(Math.random() * 26) + 65) +
+                        String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+        const numbers = Math.floor(Math.random() * 9000) + 1000;
+        return letters + numbers;
+    };
+
+    const generateRandomSeat = () => {
+        const row = Math.floor(Math.random() * 50) + 1; // Random row number from 1 to 50
+        const seatLetter = String.fromCharCode(Math.floor(Math.random() * 6) + 65); // Random seat letter from 'A' to 'F'
+        return `${row}-${seatLetter}`;
+    };    
+
+    useEffect(() => {
+        const randomDepartureTerminal = Math.floor(Math.random() * 5) + 1; 
+        const randomArrivalTerminal = Math.floor(Math.random() * 5) + 1; 
+
+        setDepartureTerminal(randomDepartureTerminal);
+        setArrivalTerminal(randomArrivalTerminal);
+        setRandomCode(generateRandomCode());
+        setSeatNumber(generateRandomSeat());
+    }, []);
 
     const changeDate = (date) => {
         const nd = new Date(date);
@@ -56,15 +84,15 @@ const ticket = (props) => {
                         </li>
                         <li className="li2">
                             <h2>Flight Number</h2>
-                            <span>AA7755</span>
+                            <span>{randomCode}</span>
                         </li>
                         <li className="li3">
                             <h2>Departure Terminal</h2>
-                            <span>Terminal 1</span>
+                            <span>Terminal {departureTerminal}</span>
                         </li>
                         <li className="li4">
                             <h2>Arrival Terminal</h2>
-                            <span>Terminal 5</span>
+                            <span>Terminal {arrivalTerminal}</span>
                         </li>
                     </ul>
                 </div>
@@ -81,7 +109,7 @@ const ticket = (props) => {
                         </li>
                         <li className="li6">
                             <h2>Seat Number</h2>
-                            <span>3-A</span>
+                            <span>{seatNumber}</span>
                         </li>
                     </ul>
                 </div>
@@ -133,4 +161,4 @@ const ticket = (props) => {
     )
 }
 
-export default ticket
+export default Ticket

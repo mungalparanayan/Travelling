@@ -18,7 +18,7 @@ router.post('/feedback', [
         return res.status(400).json({ errors: errors.array() });
     }
 
-    const {email, rating} = req.body;
+    const {email, rating, comment} = req.body;
     try {
         let user = await Feeds.findOne({email});
         if(user) {
@@ -28,11 +28,12 @@ router.post('/feedback', [
 
         const newFeedback = new Feeds({
             email: email,
-            rating: rating
+            rating: rating,
+            comment: comment
         });
         await newFeedback.save();
 
-        res.json({success, email, rating});
+        res.json({success, email, rating, comment});
     } 
     catch (error) {
         console.error(error.message);

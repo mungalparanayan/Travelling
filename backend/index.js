@@ -14,7 +14,7 @@ app.use(express.json())
 app.use('/api/form', require('./routes/formdata'))
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/feed', require('./routes/feedback'))
-
+app.use('/api/notes', require('./routes/notes'))
 
 app.listen(port, () => {
     console.log(`Travel backend listening at http://localhost:${port}`)

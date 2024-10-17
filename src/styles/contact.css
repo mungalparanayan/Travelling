@@ -35,7 +35,7 @@
     font-size: 20px;
 }
 
-form {
+.conform {
     width: 70%;
     margin: auto;
     padding: 1rem 2rem;
@@ -85,7 +85,7 @@ input:focus {
     cursor: pointer;
 }
 
-button:hover {
+.b2:hover {
     background-color: rgb(52, 14, 95);
     border-color: rgb(52, 14, 95);
 }

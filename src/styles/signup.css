@@ -1,40 +1,77 @@
 .suform {
-  width: 300px;
-  margin: 120px auto 50px auto;
+  width: 45%;
   padding: 20px;
-  border: 1px solid #ccc;
+  border-radius: 5px; 
+}
+
+.signsu {
+  display: flex;
+  margin: 150px auto 100px auto;
+  width: 60%;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #D268CB;
+}
+
+.signg {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-left: 5rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}
+
+.btn-eye2 {
+  position: absolute;
+  top: 72%;
+  left: 75.5%;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.fata {
+  width: 50%;
+  height: 400px;
+}
+
+.fata img {
+  width: 400px;
+  height: 465px;
 }
 
 .lll {
+  margin-left: 3rem;
+  color: white;
   display: block;
-  margin-bottom: 16px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .lli {
+  margin-left: 3rem;
   padding: 6px;
   font-size: 16px;
+  margin-bottom: 16px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
 .buto {
-  margin-left: 0;
-  margin-bottom: 0;
+  margin-top: 1rem;
+  margin-left: 3rem;
   width: 100%;
   padding: 10px;
   font-size: 16px;
   color: #fff;
-  background-color: #007bff;
+  background-color: #3572EF;
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 
 .buto:hover {
-  background-color: #45a049;
+  background-color: #050C9C;
 }
 
 .fontToast {

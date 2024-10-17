@@ -110,7 +110,7 @@ export default function Contact() {
   return (
     <div>
         <main className="tic">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="conform">
                 <h1 className="my-4 hh">Travel Information Form</h1>
                 <p className="text">Please provide us with the contact information below and we will arrange to reserve your ticket.</p>
                 <section>
@@ -139,7 +139,7 @@ export default function Contact() {
                         </li>
                         <li>
                             <label htmlFor="phoneno">Enter Your Phone Number <span style={{color: 'red'}}>*</span></label>
-                            <input type="tel" onChange={onchange} name="phoneno" id="phoneno" required />
+                            <input type="tel" onChange={onchange} name="phoneno" id="phoneno" required placeholder="xxxxx xxxxx"/>
                         </li>
                     </ul>
                     <h2 className="mar h2h">Travel Details</h2>

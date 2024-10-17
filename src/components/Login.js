@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/login.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
   const [details, setDetails] = useState({email: "", password: ""})
@@ -39,22 +40,38 @@ const Login = () => {
     setDetails({...details, [e.target.id] : e.target.value})
   }
 
+  const [passwordvisible, setPasswordVisible] = useState(false);
+  const togglepasswordvis = () => {
+    setPasswordVisible(!passwordvisible);
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit} className="loform">
-        <div>
-          <label className="ll" htmlFor="email">Email</label>
-          <input className="lii" type="email" id="email" value={details.email} onChange={onchange} />
+        <div className="left-in">
+          <div className='ll1'>Login</div>
+          <div>
+            <label className="ll" htmlFor="email">Email</label>
+            <input className="lii" type="email" id="email" value={details.email} onChange={onchange} />
+          </div>
+          <div>
+            <label className="ll" htmlFor="password">Password</label>
+            <input className="lii" type={passwordvisible?"text":"password"} id="password" value={details.password} onChange={onchange} />
+            <button type="button" className='btn-eye1' onClick={togglepasswordvis}>
+              {passwordvisible ? <FaEyeSlash /> :  <FaEye />}
+            </button>
+          </div>
+          <button className="but" type="submit">Submit</button>
+          <p className="trap">New to Traveling? <span><Link to="/signup" className="sinow">Sign up now.</Link></span></p>
         </div>
-        <div>
-          <label className="ll" htmlFor="password">Password</label>
-          <input className="lii" type="password" id="password" value={details.password} onChange={onchange} />
+        <div className="right-in">
+          <div>
+            <img src="/images/111.jpg" alt="" />
+          </div>
         </div>
-        <button className="but" type="submit">Login</button>
-        <p className="trap">New to Traveling? <span><Link to="/signup" className="sinow">Sign up now.</Link></span></p>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Login; 

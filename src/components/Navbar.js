@@ -70,7 +70,7 @@ export default function Navbar() {
                 {/* Menu Toggle */}
                 <div id="menu-bar" className={`fas fa-bars ${isMenuActive ? 'fa-times' : ''}`} onClick={() => setIsMenuActive(!isMenuActive)}></div>
 
-                <a href="#" className="logo"><span>T</span>ravel</a>
+                <Link to="#" className="logo"><span>T</span>ravel</Link>
 
                 {/* Navigation Menu */}
                 <nav className={`navbar ${isMenuActive ? 'active' : ''}`}>
@@ -79,33 +79,40 @@ export default function Navbar() {
                     <Link to="/contact">Book</Link>
                     <Link to="/history">History</Link>
                     <Link to="/rating">Review</Link>
+                    <Link to="/postList">Dream List</Link>
                 </nav>
 
                 {/* Icons */}
                 <div className="icons">
-                    <i className="fas fa-search" id="search-btn" onClick={() => setIsSearchActive(!isSearchActive)}></i>
+                    {/* <i className="fas fa-search" id="search-btn" onClick={() => setIsSearchActive(!isSearchActive)}></i> */}
                     <i className="fas fa-user" id="login-btn" onClick={toggleProfileOptions} ref={profileRef}></i>
                 </div>
 
                 {/* Search Bar */}
-                <form action="" className={`search-bar-container ${isSearchActive ? 'active' : ''}`} ref={searchRef}>
+                {/* <form action="" className={`search-bar-container ${isSearchActive ? 'active' : ''}`} ref={searchRef}>
                     <input type="search" id="search-bar" placeholder="Search here..." />
                     <label htmlFor="search-bar" className="fas fa-search"></label>
-                </form>
+                </form> */}
 
                 {/* Profile Options */}
                 {showProfileOptions && (
                     <div className="profile-options" ref={profileRef}>
                         {!isLoggedIn ? (
                             <ul className="logbut">
-                                <li className="lee"><Link className="btn2" to="/login" role="button">Login</Link></li>
-                                <li className="lee"><Link className="btn2" to="/signup" role="button">Signup</Link></li>
+                                <li className="lee">
+                                    <Link className="btn2 bbb1" to="/login" role="button">Login</Link>
+                                    <i className="fa-solid fa-arrow-right-to-bracket"></i>
+                                </li>
+                                <li className="lee">
+                                    <Link className="btn2 bbb2" to="/signup" role="button">Signup</Link>
+                                    <i className="fa-solid fa-user-plus"></i>
+                                </li>
                             </ul>
                         ) : (
                             <div className="logid">
-                                <span className="spn" style={{ color: "Yellowgreen" }}>{localStorage.getItem('Email')}</span>
+                                <span className="spn" style={{ color: "Yellowgreen", fontSize: '2rem' }}>{localStorage.getItem('Email')}</span>
                                 <button onClick={handleLogout} className="btn1" style={{ fontSize: "2rem" }}>
-                                    <span>Logout</span>
+                                    <span style={{fontSize: '2rem'}}>Logout</span>
                                     <i className="fa-solid fa-arrow-right-from-bracket"></i>
                                 </button>
                             </div>

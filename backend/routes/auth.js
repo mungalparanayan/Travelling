@@ -26,7 +26,9 @@ router.post('/createuser', [
         }
 
         const salt = await bcrypt.genSalt(10);
+        console.log("salt is : ", salt);
         const secPass = await bcrypt.hash(req.body.password, salt);
+        console.log("secpass is : ", secPass);
 
         const { name, email, password } = req.body;
         const newdata = new User({
@@ -41,7 +43,9 @@ router.post('/createuser', [
                 id : newdata.id
             }
         }
+        console.log(data);
         const authtoken = jwt.sign(data, JWT_SECRET);
+        console.log("token ", authtoken);
 
         if(authtoken) {
             success = true;

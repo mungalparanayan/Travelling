@@ -84,7 +84,7 @@ const about = () => {
                 <Places city="bali" cityName="Bali" msg="Bali is a province of Indonesia and the westernmost of the Lesser Sunda Islands. East of Java and west of Lombok, the province includes the island of Bali." />
                 <Places city="barcelona" cityName="Barcelona" msg="Barcelona, on Spain's northeastern coast, is the capital of Catalonia. Known for its art, architecture, and vibrant culture." />
                 <Places city="hawaii" cityName="Hawaii" msg="Hawaii is a state in the Western United States, located in the Pacific Ocean about 2,000 miles from the U.S. mainland." />
-                <Places city="miami" cityName="Miami" msg="Miami known as 'The Magic City', and 'Gateway to the Americas', is a coastal metropolis and the county seat of Miami-Dade County in South Florida, United States." />
+                <Places city="miami" cityName="Miami" msg="Miami known as 'The Magic City', and 'Gateway to the Americas', the county seat of Miami-Dade County in South Florida, United States." />
                 <Places city="munich" cityName="Munich" msg="Munich is the capital and most populous city of the German state of Bavaria. it is the third-largest city in Germany, after Berlin and Hamburg." />
             </div>
         </main>
