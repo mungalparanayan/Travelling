@@ -77,6 +77,7 @@ const ReviewPage = () => {
           return (
             <label key={index}>
               <input
+                className='typera'
                 type="radio"
                 name="rating"
                 value={ratingValue}

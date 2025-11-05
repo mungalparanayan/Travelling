@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 export default function Contact() {
-    const [details, setDetails] = useState({name: "", email: "", phoneno: "", age: "", dep_country: "", des_country: "", dep_date: "", des_date: "", service_class: "Business"})
+    const [details, setDetails] = useState({name: "", email: "", phoneno: "", age: "", dep_country: "", des_country: "", dep_date: "", des_date: "", service_class: ""})
 
     const [data, setData] = useState([]) 
     const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function Contact() {
             e.preventDefault(); 
             const {name, email, phoneno, age, dep_country, des_country, dep_date, des_date, service_class} = details
 
-            const response = await fetch("https://travel-1xsf.onrender.com/api/form/formdata", {
+            const response = await fetch("http://localhost:5000/api/form/formdata", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function Contact() {
 
             console.log(details);
 
-            if(!details.name || !details.email || !details.phoneno || !details.age || !details.dep_country || !details.des_country || !details.dep_date || !details.des_date) {
+            if(!details.name || !details.email || !details.phoneno || !details.age || !details.dep_country || !details.des_country || !details.dep_date || !details.des_date || !details.service_class) {
                 toast.warning("Please select details properly.", {
                     position: "top-center",
                     className: "fontToast"
@@ -60,7 +60,7 @@ export default function Contact() {
                 des_country: "",
                 dep_date: "",
                 des_date: "",
-                service_class: "Business",
+                service_class: "",
               });
               
               navigate("/");
@@ -74,25 +74,10 @@ export default function Contact() {
         setDetails({ ...details, [e.target.name]: e.target.value });
     }
 
-    // const sub = (e) => {
-    //     if(!details.name || !details.email || !details.phoneno || !details.age || !details.dep_country || !details.des_country || !details.dep_date || !details.des_date) {
-    //         window.alert("Please select details properly.");
-    //         e.preventDefault();
-    //     }
-    //     else if(details.dep_country && details.des_country && details.dep_country === details.des_country) {
-    //         window.alert("Departure Country and Destination Country cannot be same");
-    //         e.preventDefault();
-    //     }
-    //     else {
-    //         window.alert("Submit Successfully !!!");
-    //         navigate("/");
-    //     }
-    // }
-
     const getTodayDate = () => {
         const today = new Date();
         const dd = String(today.getDate()).padStart(2, '0');
-        const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); 
         const yyyy = today.getFullYear();
         return `${yyyy}-${mm}-${dd}`;
     };
@@ -116,29 +101,20 @@ export default function Contact() {
                 <section>
                     <h2 className="h2h">Your Personal details</h2>
                     <ul>
-                        {/* <li>
-                            <label htmlFor="info">Title</label>
-                            <select className="pr1" id="info" name="favouritecolor"> 
-                                <option value>please select</option>
-                                <option value="Mr">Mr.</option>
-                                <option value="Mrs">Mrs.</option>
-                                <option value="Ms">Ms.</option>
-                            </select>
-                        </li> */}
                         <li>
-                            <label htmlFor="name">Enter Your name <span style={{color: 'red'}}>*</span></label>
+                            <label className='confo' htmlFor="name">Enter Your name <span style={{color: 'red'}}>*</span></label>
                             <input className="n1" onChange={onchange} type="text" name="name" id="name" required placeholder="Enter your name" />
                         </li>
                         <li>
-                            <label htmlFor="email">Enter Your email address <span style={{color: 'red'}}>*</span></label>
+                            <label className='confo' htmlFor="email">Enter Your email address <span style={{color: 'red'}}>*</span></label>
                             <input type="email" onChange={onchange} name="email" id="email" required placeholder="xxx@gmail.com" />
                         </li>
                         <li>
-                            <label htmlFor="age">Enter Your age <span style={{color: 'red'}}>*</span></label>
+                            <label className='confo' htmlFor="age">Enter Your age <span style={{color: 'red'}}>*</span></label>
                             <input type="number" step="1" onChange={onchange} name="age" id="age" required />
                         </li>
                         <li>
-                            <label htmlFor="phoneno">Enter Your Phone Number <span style={{color: 'red'}}>*</span></label>
+                            <label className='confo' htmlFor="phoneno">Enter Your Phone Number <span style={{color: 'red'}}>*</span></label>
                             <input type="tel" onChange={onchange} name="phoneno" id="phoneno" required placeholder="xxxxx xxxxx"/>
                         </li>
                     </ul>
@@ -188,27 +164,25 @@ export default function Contact() {
                             <input id="des_date" type="date" onChange={onchange} name="des_date" required min={details.dep_date || getTodayDate()}/>
                             {/* <input type="time" value="00:00" name="user-time" required /> */}
                         </li>
-                        {/* <li>
+                        <li>
                             <label>class of service <span style={{color: 'red'}}>*</span></label>
+                            <li className="form-control-inline">
+                                <input type="radio" name="service_class" onChange={onchange} id="verify-text-message" value="Economy class" required />
+                                <label htmlFor="verify-text-message">Economy class</label>
+                            </li>
+                            <li className="form-control-inline">
+                                <input type="radio" name="service_class" onChange={onchange} id="verify-phone" value="Bussiness Class" required />
+                                <label htmlFor="verify-phone">Bussiness Class</label>
+                            </li>
+                            <li className="form-control-inline">
+                                <input type="radio" name="service_class" onChange={onchange} id="verify-email" value="First Class" required />
+                                <label htmlFor="verify-email">First Class</label>
+                            </li>
                         </li>
-                        <li className="form-control-inline">
-                            <input type="radio" name="sclass" checked={details.service_class === 'Economy Class'} onChange={onchange} id="verify-text-message" value="Economy class" required />
-                            <label htmlFor="verify-text-message">Economy class</label>
-                        </li>
-                        <li className="form-control-inline">
-                            <input type="radio" name="sclass" checked={details.service_class === 'Business Class'} onChange={onchange} id="verify-phone" value="Bussiness Class" required />
-                            <label htmlFor="verify-phone">Bussiness Class</label>
-                        </li>
-                        <li className="form-control-inline">
-                            <input type="radio" name="sclass" checked={details.service_class === 'First Class'} onChange={onchange} id="verify-email" value="First Class" required />
-                            <label htmlFor="verify-email">First Class</label>
-                        </li> */}
                     </ul>
                 </section>  
 
                 <section className="buttons">
-                    {/* <button id="b1" onClick={res} type="reset" className="b1">Clear</button> */}
-                    {/* <button id="b2" onClick={sub} type="submit" className="b2">Book ticket</button> */}
                     <button id="b2" type="submit" className="b2">Book ticket</button>
                 </section>
             </form>

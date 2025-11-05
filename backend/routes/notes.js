@@ -2,8 +2,60 @@ const express = require('express');
 const router = express.Router();
 const Note = require('../model/Note');
 const { body, validationResult } = require('express-validator');
-const fetchuser = require('../middleware/fetchuser');  
+const fetchuser = require('../middleware/fetchuser');
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Note:
+ *       type: object
+ *       required:
+ *         - title
+ *         - description
+ *       properties:
+ *         title:
+ *           type: string
+ *           description: Note title
+ *           minLength: 3
+ *         description:
+ *           type: string
+ *           description: Note description
+ *           minLength: 5
+ *         tag:
+ *           type: string
+ *           description: Note tag/category
+ *         user:
+ *           type: string
+ *           description: User ID (auto-assigned)
+ *         date:
+ *           type: string
+ *           format: date-time
+ *           description: Creation date (auto-assigned)
+ */  
+
+/**
+ * @swagger
+ * /api/notes/fetchallnotes:
+ *   get:
+ *     summary: Get all notes for the authenticated user
+ *     tags: [Notes]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Notes retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Note'
+ *       401:
+ *         description: Unauthorized - Invalid or missing token
+ *       500:
+ *         description: Internal server error
+ */
 // ROUTE 1 :- Get All the Notes using : GET "api/notes/fetchallnotes". login required
 router.get('/fetchallnotes', fetchuser, async (req, res) => {
     try {
@@ -16,6 +68,60 @@ router.get('/fetchallnotes', fetchuser, async (req, res) => {
     }
 })
 
+/**
+ * @swagger
+ * /api/notes/addnote:
+ *   post:
+ *     summary: Create a new note
+ *     tags: [Notes]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - title
+ *               - description
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 minLength: 3
+ *               description:
+ *                 type: string
+ *                 minLength: 5
+ *               tag:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Note created successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 savedNote:
+ *                   $ref: '#/components/schemas/Note'
+ *                 success:
+ *                   type: boolean
+ *       400:
+ *         description: Validation error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 errors:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *       401:
+ *         description: Unauthorized - Invalid or missing token
+ *       500:
+ *         description: Internal server error
+ */
 // ROUTE 2 :- add a new Note using : POST "api/notes/addnote". login required
 router.post('/addnote', fetchuser, [
     body('title', "Enter a valid title").isLength({min: 3}),
@@ -43,6 +149,50 @@ router.post('/addnote', fetchuser, [
     }
 })
 
+/**
+ * @swagger
+ * /api/notes/updatenote/{id}:
+ *   put:
+ *     summary: Update an existing note
+ *     tags: [Notes]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Note ID
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 minLength: 3
+ *               description:
+ *                 type: string
+ *                 minLength: 5
+ *               tag:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Note updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Note'
+ *       401:
+ *         description: Unauthorized - Invalid or missing token
+ *       404:
+ *         description: Note not found
+ *       500:
+ *         description: Internal server error
+ */
 // ROUTE 3 :- Update an existing Note using : PUT "api/notes/updatenote". login required
 router.put('/updatenote/:id', fetchuser, async (req, res) => {
     const {title, description, tag} = req.body;
@@ -74,6 +224,40 @@ router.put('/updatenote/:id', fetchuser, async (req, res) => {
     }
 })
 
+/**
+ * @swagger
+ * /api/notes/deletenote/{id}:
+ *   delete:
+ *     summary: Delete a note
+ *     tags: [Notes]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Note ID
+ *     responses:
+ *       200:
+ *         description: Note deleted successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 Sucess:
+ *                   type: string
+ *                 note:
+ *                   $ref: '#/components/schemas/Note'
+ *       401:
+ *         description: Unauthorized - Invalid or missing token
+ *       404:
+ *         description: Note not found
+ *       500:
+ *         description: Internal server error
+ */
 // ROUTE 4 :- Delete an existing Note using : DELETE "api/notes/deletenote". login required
 router.delete('/deletenote/:id', fetchuser, async (req, res) => {
     try {

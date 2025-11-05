@@ -101,7 +101,7 @@ const Ticket = (props) => {
                     <ul className="ul1">
                         <li className="li5">
                             <h2>Seat Class</h2>
-                            <span id="sclass">{props.sclass}</span>
+                            <span id="sclass">{props.service_class}</span>
                         </li>
                         <li className="li6">
                             <h2>Extra Baggage Allowance</h2>

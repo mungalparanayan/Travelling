@@ -11,7 +11,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      const response = await fetch("https://travel-1xsf.onrender.com/api/auth/createuser", {
+        const response = await fetch("http://localhost:5000/api/auth/createuser", {
         method: "POST", 
         headers: {
           "Content-type": "application/json"
@@ -67,10 +67,10 @@ const Signup = () => {
           <label className="lll" htmlFor="email">Email</label>
           <input className="lli" type="email" id="email" value={details.email} onChange={onchange} />
         </div>
-        <div>
-          <label className="lll" htmlFor="password">Password</label>
+        <div className="signup-password-container">
+          <label className="llll" htmlFor="password">Password</label>
           <input className="lli" type={passwordvisible?"text":"password"} id="password" value={details.password} onChange={onchange} />
-          <button type="button" className='btn-eye2' onClick={togglepasswordvis}>
+          <button type="button" className='signup-eye-btn' onClick={togglepasswordvis}>
             {passwordvisible ? <FaEyeSlash /> :  <FaEye />}
           </button>
         </div>

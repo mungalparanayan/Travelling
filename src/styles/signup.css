@@ -21,13 +21,39 @@
   color: white;
 }
 
-.btn-eye2 {
+.signup-password-container {
+  position: relative;
+  width: 100%;
+  margin-left: 3rem; 
+}
+
+.signup-password-container .lli {
+  padding-right: 45px; 
+  box-sizing: border-box;
+  margin-left: 0;
+}
+
+.signup-eye-btn {
   position: absolute;
-  top: 72%;
-  left: 75.5%;
+  right: 10px; 
+  top: 70%;
+  transform: translateY(-50%);
   background: none;
+  border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #666;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10; 
+}
+
+.signup-eye-btn:hover {
+  color: #333;
+  transform: translateY(-50%) scale(1.1);
+  transition: all 0.2s ease;
 }
 
 .fata {
@@ -38,10 +64,19 @@
 .fata img {
   width: 400px;
   height: 465px;
+  object-fit: cover;
+  border-radius: 0 5px 5px 0;
 }
 
 .lll {
   margin-left: 3rem;
+  color: white;
+  display: block;
+  font-size: 1.8rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.llll {
   color: white;
   display: block;
   font-size: 1.8rem;
@@ -76,4 +111,143 @@
 
 .fontToast {
   font-size: 1.5rem;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .signsu {
+    width: 75%;
+    margin: 100px auto 80px auto;
+  }
+
+  .fata img {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .signsu {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .suform {
+    width: 100%;
+    padding: 1.5rem;
+    order: 2;
+  }
+
+  .fata {
+    width: 100%;
+    height: 300px;
+    order: 1;
+  }
+
+  .fata img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+  }
+
+  .signg {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .lll,
+  .llll {
+    font-size: 1.5rem;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .lli {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .signup-password-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .signup-eye-btn {
+    font-size: 1.4rem;
+    right: 10px;
+  }
+
+  .buto {
+    margin-left: 0;
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .signsu {
+    width: 95%;
+    margin: 80px auto 60px auto;
+  }
+
+  .signg {
+    font-size: 1.8rem;
+  }
+
+  .lll,
+  .llll {
+    font-size: 1.3rem;
+  }
+
+  .lli {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .signup-eye-btn {
+    font-size: 1.2rem;
+    padding: 6px;
+  }
+
+  .buto {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .signsu {
+    width: 98%;
+    margin: 40px auto 20px auto;
+  }
+
+  .signg {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .lll,
+  .llll {
+    font-size: 1.1rem;
+  }
+
+  .lli {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .signup-eye-btn {
+    font-size: 1rem;
+    padding: 5px;
+  }
+
+  .buto {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

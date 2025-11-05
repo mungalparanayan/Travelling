@@ -56,7 +56,7 @@ const History = () => {
                             </ul>
                             <button className="beaa" onClick={() => handleTicket(data._id)}>View Ticket</button>
                         </div>
-                        {selectTicket === data._id && <Ticket ticket={selectTicket} key={data._id} date={data.date} name={data.name} dep_country={data.dep_country} des_country={data.des_country} dep_date={data.dep_date} des_date={data.des_date} sclass="Business class" />}
+                        {selectTicket === data._id && <Ticket ticket={selectTicket} key={data._id} date={data.date} name={data.name} dep_country={data.dep_country} des_country={data.des_country} dep_date={data.dep_date} des_date={data.des_date} service_class={data.service_class} />}
                     </div>
                 );
             })}

@@ -1,5 +1,5 @@
 .tic {
-    background: url("form_back.jpg");
+    background: url("con_back.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -11,7 +11,7 @@
 .hh {
     text-align: center;
     color: #2F0F5D;
-    font-size: 5rem;
+    font-size: 4rem;
     margin-top: 6rem;
     margin-bottom: 2rem;
 }
@@ -37,7 +37,7 @@
 
 .conform {
     width: 70%;
-    margin: auto;
+    margin-left: 28%;
     padding: 1rem 2rem;
     border-radius: 6px;
     background: transparent;
@@ -49,6 +49,7 @@
 
 label {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
     display: block;
     color: #0B2447;
     font-family: "popins", serif;
@@ -105,13 +106,12 @@ input:focus {
 
 .b2 {
     margin: 2rem;
+    padding: 1rem;
 }
 
 .fontToast {
     font-size: 1.5rem;
 }
-
-
 
 @media (max-width: 1200px) {
     

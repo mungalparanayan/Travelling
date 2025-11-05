@@ -297,6 +297,9 @@ header .search-bar-container label:hover {
 footer {
     background: rgb(24, 24, 24);
     padding: 2.5rem 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
 
 footer ul {
@@ -401,6 +404,14 @@ footer i:hover {
         margin: 1.5rem 0;
         background: #222;
     }
+    
+    footer ul {
+        gap: 6rem;
+    }
+    
+    footer i {
+        font-size: 3.5rem;
+    }
 }
 
 @media (max-width: 450px) {
@@ -414,6 +425,14 @@ footer i:hover {
 
     footer i {
         font-size: 3.5rem;
+    }
+    
+    footer {
+        padding: 2rem 0;
+    }
+    
+    footer ul {
+        gap: 4rem;
     }
 }
 

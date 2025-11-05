@@ -26,22 +26,24 @@ function App() {
     <FormState>
       <ToastContainer />
       <Router>
-        <Navbar />
-        <div className="container">
-          <Routes>
-            <Route exact path="/" element={ <Index /> }> </Route>
-            <Route exact path="/about" element={ <About /> }> </Route>
-            <Route exact path="/contact" element={ <Contact /> }> </Route>
-            <Route exact path="/world" element={ <World /> }> </Route>
-            <Route exact path="/login" element={ <Login /> }> </Route>
-            <Route exact path="/signup" element={ <Signup /> }> </Route>
-            <Route exact path="/history" element={ <History /> }> </Route>
-            <Route exact path="/rating" element={ <Rating /> }> </Route>
-            <Route exact path="/history/ticket" element={ <Ticket /> }> </Route>
-            <Route exact path="/postlist" element={ <Notes /> }> </Route>
-          </Routes>
+        <div className="app-wrapper">
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route exact path="/" element={ <Index /> }> </Route>
+              <Route exact path="/about" element={ <About /> }> </Route>
+              <Route exact path="/contact" element={ <Contact /> }> </Route>
+              <Route exact path="/world" element={ <World /> }> </Route>
+              <Route exact path="/login" element={ <Login /> }> </Route>
+              <Route exact path="/signup" element={ <Signup /> }> </Route>
+              <Route exact path="/history" element={ <History /> }> </Route>
+              <Route exact path="/rating" element={ <Rating /> }> </Route>
+              <Route exact path="/history/ticket" element={ <Ticket /> }> </Route>
+              <Route exact path="/postlist" element={ <Notes /> }> </Route>
+            </Routes>
+          </main>
+          <Footer />
         </div>
-        <Footer />
       </Router>
     </FormState>
     </>

@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://travel-1xsf.onrender.com/api/auth/login", {
+    const response = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -54,10 +54,10 @@ const Login = () => {
             <label className="ll" htmlFor="email">Email</label>
             <input className="lii" type="email" id="email" value={details.email} onChange={onchange} />
           </div>
-          <div>
+          <div className="login-password-container">
             <label className="ll" htmlFor="password">Password</label>
             <input className="lii" type={passwordvisible?"text":"password"} id="password" value={details.password} onChange={onchange} />
-            <button type="button" className='btn-eye1' onClick={togglepasswordvis}>
+            <button type="button" className='login-eye-btn' onClick={togglepasswordvis}>
               {passwordvisible ? <FaEyeSlash /> :  <FaEye />}
             </button>
           </div>
