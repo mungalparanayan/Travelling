@@ -22,7 +22,7 @@ const ReviewPage = () => {
 
     if (!ema) {
       toast.error("User not logged in. Please log in to submit a rating.", {
-        position: "top-center",
+        position: "top-right",
         className: "fontToast"
       });
       return;
@@ -30,7 +30,7 @@ const ReviewPage = () => {
 
     if (rating === 0 || comment === "") {
       toast.error("Please provide both a rating and a comment.", {
-        position: "top-center",
+        position: "top-right",
         className: "fontToast"
       });
       return;
@@ -52,7 +52,7 @@ const ReviewPage = () => {
     console.log("JSON : " , json.success);
     if(json.success) {
       toast.success("Rating submitted successfully", {
-        position: "top-center",
+        position: "top-right",
         className: "fontToast"
       });
       setRating(0);
@@ -60,7 +60,7 @@ const ReviewPage = () => {
     }
     else {
         toast.error(json.error, {
-            position: "top-center",
+            position: "top-right",
             className: "fontToast"
         });
     }

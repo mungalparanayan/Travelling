@@ -33,21 +33,21 @@ export default function Contact() {
 
             if(!details.name || !details.email || !details.phoneno || !details.age || !details.dep_country || !details.des_country || !details.dep_date || !details.des_date || !details.service_class) {
                 toast.warning("Please select details properly.", {
-                    position: "top-center",
+                    position: "top-right",
                     className: "fontToast"
                 })
                 return;
             }
             else if(details.dep_country && details.des_country && details.dep_country === details.des_country) {
                 toast.warning("Departure Country and Destination Country cannot be same", {
-                    position: "top-center",
+                    position: "top-right",
                     className: "fontToast"
                 });
                 return;
             }
 
             toast.success("Ticket booked successfully", {
-                position: "top-center",
+                position: "top-right",
                 className: "fontToast"
             });
             

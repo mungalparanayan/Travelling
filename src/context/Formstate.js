@@ -41,12 +41,12 @@ const FormState = (props) => {
     setnotes(notes.concat(note));
     if(note.success) {
       toast.success("Note Added successfully", {
-        position: "top-center"
+        position: "top-right"
       })
     }
     else {
       toast.error("Failed to add note", {
-        position: "top-center",
+        position: "top-right",
       });
     }
   }

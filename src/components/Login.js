@@ -24,13 +24,13 @@ const Login = () => {
       localStorage.setItem("token", json.authtoken);
       navigate("/");
       toast.success("Login Successfully", {
-        position: "top-center",
+        position: "top-right",
         className: "fontToast"
       })
     }
     else {
       toast.error("Please Login with proper details", {
-        position: "top-center",
+        position: "top-right",
         className: "fontToast"
       })
     }
