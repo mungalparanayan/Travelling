@@ -30,3 +30,4 @@ app.listen(port, () => {
 
 // console.log("Backend server setup is commented out.");
 
+console.log("Backend server is running.");
