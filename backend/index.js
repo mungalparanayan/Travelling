@@ -26,3 +26,7 @@ app.listen(port, () => {
     console.log(`Swagger UI available at http://localhost:${port}/api-docs`)
 })
 
+// import ('./db.js');
+
+// console.log("Backend server setup is commented out.");
+

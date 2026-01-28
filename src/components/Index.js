@@ -79,7 +79,7 @@ const Index = () => {
                         <i className="fas fa-star"></i>
                         <i className="far fa-star"></i>
                     </div>
-                    <div className="price">$90.00 <span>$120.00</span> </div>
+                    <div className="price">$460.00 <span>$500.00</span> </div>
                     <a href="#" className="btn">book now</a>
                 </div>
             </div>
@@ -95,7 +95,7 @@ const Index = () => {
                         <i className="fas fa-star"></i>
                         <i className="far fa-star"></i>
                     </div>
-                    <div className="price">$90.00 <span>$120.00</span> </div>
+                    <div className="price">$950.00 <span>$1000.00</span> </div>
                     <a href="#" className="btn">book now</a>
                 </div>
             </div>
@@ -109,9 +109,9 @@ const Index = () => {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
+                        <i className="fas fa-star"></i>
                     </div>
-                    <div className="price">$90.00 <span>$120.00</span> </div>
+                    <div className="price">$1180.00 <span>$1250.00</span> </div>
                     <a href="#" className="btn">book now</a>
                 </div>
             </div>
@@ -125,9 +125,9 @@ const Index = () => {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
+                        <i className="fas fa-star"></i>
                     </div>
-                    <div className="price">$90.00 <span>$120.00</span> </div>
+                    <div className="price">$1400.00 <span>$1500.00</span> </div>
                     <a href="#" className="btn">book now</a>
                 </div>
             </div>
@@ -143,7 +143,7 @@ const Index = () => {
                         <i className="fas fa-star"></i>
                         <i className="far fa-star"></i>
                     </div>
-                    <div className="price">$90.00 <span>$120.00</span> </div>
+                    <div className="price">$1680.00 <span>$1800.00</span> </div>
                     <a href="#" className="btn">book now</a>
                 </div>
             </div>
@@ -157,9 +157,9 @@ const Index = () => {
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
                         <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
+                        <i className="fas fa-star"></i>
                     </div>
-                    <div className="price">$90.00 <span>$120.00</span> </div>
+                    <div className="price">$1860.00 <span>$2000.00</span> </div>
                     <a href="#" className="btn">book now</a>
                 </div>
             </div>

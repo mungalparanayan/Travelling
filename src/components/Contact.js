@@ -14,6 +14,21 @@ export default function Contact() {
             e.preventDefault(); 
             const {name, email, phoneno, age, dep_country, des_country, dep_date, des_date, service_class} = details
 
+            if(!details.name || !details.email || !details.phoneno || !details.age || !details.dep_country || !details.des_country || !details.dep_date || !details.des_date || !details.service_class) {
+                toast.warning("Please select details properly.", {
+                    position: "top-right",
+                    className: "fontToast"
+                })
+                return;
+            }
+            else if(details.dep_country && details.des_country && details.dep_country === details.des_country) {
+                toast.warning("Departure Country and Destination Country cannot be same", {
+                    position: "top-right",
+                    className: "fontToast"
+                });
+                return;
+            }
+
             const response = await fetch("http://localhost:5000/api/form/formdata", {
                 method: "POST",
                 headers: {
@@ -31,21 +46,7 @@ export default function Contact() {
 
             console.log(details);
 
-            if(!details.name || !details.email || !details.phoneno || !details.age || !details.dep_country || !details.des_country || !details.dep_date || !details.des_date || !details.service_class) {
-                toast.warning("Please select details properly.", {
-                    position: "top-right",
-                    className: "fontToast"
-                })
-                return;
-            }
-            else if(details.dep_country && details.des_country && details.dep_country === details.des_country) {
-                toast.warning("Departure Country and Destination Country cannot be same", {
-                    position: "top-right",
-                    className: "fontToast"
-                });
-                return;
-            }
-
+            
             toast.success("Ticket booked successfully", {
                 position: "top-right",
                 className: "fontToast"
@@ -102,26 +103,26 @@ export default function Contact() {
                     <h2 className="h2h">Your Personal details</h2>
                     <ul>
                         <li>
-                            <label className='confo' htmlFor="name">Enter Your name <span style={{color: 'red'}}>*</span></label>
+                            <label className='confo' htmlFor="name">Name <span style={{color: 'red'}}>*</span></label>
                             <input className="n1" onChange={onchange} type="text" name="name" id="name" required placeholder="Enter your name" />
                         </li>
                         <li>
-                            <label className='confo' htmlFor="email">Enter Your email address <span style={{color: 'red'}}>*</span></label>
+                            <label className='confo' htmlFor="email">Email <span style={{color: 'red'}}>*</span></label>
                             <input type="email" onChange={onchange} name="email" id="email" required placeholder="xxx@gmail.com" />
                         </li>
                         <li>
-                            <label className='confo' htmlFor="age">Enter Your age <span style={{color: 'red'}}>*</span></label>
+                            <label className='confo' htmlFor="age">Age <span style={{color: 'red'}}>*</span></label>
                             <input type="number" step="1" onChange={onchange} name="age" id="age" required />
                         </li>
                         <li>
-                            <label className='confo' htmlFor="phoneno">Enter Your Phone Number <span style={{color: 'red'}}>*</span></label>
+                            <label className='confo' htmlFor="phoneno">Phone Number <span style={{color: 'red'}}>*</span></label>
                             <input type="tel" onChange={onchange} name="phoneno" id="phoneno" required placeholder="xxxxx xxxxx"/>
                         </li>
                     </ul>
                     <h2 className="mar h2h">Travel Details</h2>
                     <ul>
                         <li>
-                            <label htmlFor="dep_country">Departure country <span style={{color: 'red'}}>*</span></label>
+                            <label htmlFor="dep_country">From <span style={{color: 'red'}}>*</span></label>
                             <select id="dep_country" onChange={onchange} name="dep_country" required> 
                                 <option value>please select</option>
                                 <option value="Australia">Australia</option>
@@ -138,7 +139,7 @@ export default function Contact() {
                             </select>
                         </li>
                         <li>
-                            <label htmlFor="des_country">Destination country <span style={{color: 'red'}}>*</span></label>
+                            <label htmlFor="des_country">To <span style={{color: 'red'}}>*</span></label>
                             <select id="des_country" onChange={onchange} name="des_country" required> 
                                 <option value>please select</option>
                                 <option value="Australia">Australia</option>
